@@ -1,5 +1,6 @@
-import User from '../../models/user.model.js';
+import { User } from '../../models/user.model.js';
 import { Parser } from 'json2csv';
+import { deleteAuthByUserId } from '../auth.service.js';
 
 export const getAllUsers = async (query) => {
   const filter = {};
@@ -21,5 +22,9 @@ export const blockUserById = async (userId) => {
 };
 
 export const deleteUserById = async (userId) => {
-  return await User.findByIdAndDelete(userId);
+  const user = await User.findByIdAndDelete(id);
+  if (user) {
+    await deleteAuthByUserId(user._id); // use service method
+  }
+  return user;
 };

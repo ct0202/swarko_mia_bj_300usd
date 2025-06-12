@@ -5,11 +5,12 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 
 import env from './config/env.js';
+
+
 import userRoutes from './routes/user.routes.js';
 import authRoutes from './routes/auth.routes.js';
+import adminRoutes from './routes/admin.routes.js';
 
-
-import adminUserRoutes from './routes/admin/admin.user.routes.js';
 
 const app = express();
 
@@ -23,7 +24,7 @@ app.use(morgan('dev'));
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 
-app.use('/api/admin/users', adminUserRoutes);
+app.use('/api/admin', adminRoutes);
 
 
 

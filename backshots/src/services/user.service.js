@@ -1,5 +1,6 @@
 // src/services/user.service.js
 import { User } from '../models/user.model.js';
+import { deleteAuthByUserId } from './auth.service.js';
 
 export const createUser = async (userData) => {
   const user = new User(userData);
@@ -19,5 +20,9 @@ export const updateUser = async (id, userData) => {
 };
 
 export const deleteUser = async (id) => {
-  return await User.findByIdAndDelete(id);
+  const user = await User.findByIdAndDelete(id);
+  if (user) {
+    await deleteAuthByUserId(user._id); // use service method
+  }
+  return user;
 };

@@ -18,3 +18,7 @@ Content-Type: application/json
   "telegramId": "123456789",
   "password": "securePass123"
 }
+
+
+### Delete
+DELETE http://localhost:6969/api/auth/delete/684ade7eb0c5d56421cc5eb1

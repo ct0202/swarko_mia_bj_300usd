@@ -2,7 +2,6 @@
 curl -X POST http://localhost:6969/api/users \
   -H "Content-Type: application/json" \
   -d '{
-    "telegramId": "123456789",
     "name": "John Doe",
     "phone": "+77011234567",
     "email": "john@example.com"
@@ -12,20 +11,19 @@ curl -X POST http://localhost:6969/api/users \
 GET http://localhost:6969/api/users
 
 ### Get the user
-GET http://localhost:6969/api/users/684ad97a47dbfdce043f647a
+GET http://localhost:6969/api/users/684ade7eb0c5d56421cc5eb1
 
 ### Update the user
 curl -X PUT http://localhost:6969/api/users/684ad97a47dbfdce043f647a \
   -H "Content-Type: application/json" \
   -d '{
-    "telegramId": "1234567891010",
     "name": "John Doe new",
     "phone": "+77011234267",
     "email": "johnnew@example.com"
   }'
 
 ### Delete the user
-DELETE http://localhost:6969/api/users/684ad97a47dbfdce043f647a
+DELETE http://localhost:6969/api/users/684ade7eb0c5d56421cc5eb1
 
 
 

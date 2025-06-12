@@ -23,7 +23,7 @@ curl -X PUT http://localhost:6969/api/users/684ad97a47dbfdce043f647a \
   }'
 
 ### Delete the user
-DELETE http://localhost:6969/api/users/684ade7eb0c5d56421cc5eb1
+DELETE http://localhost:6969/api/users/684ae34b324c00d18ce1828c
 
 
 

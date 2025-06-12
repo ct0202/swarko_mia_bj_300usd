@@ -9,6 +9,8 @@ import userRoutes from './routes/user.routes.js';
 import authRoutes from './routes/auth.routes.js';
 
 
+import adminUserRoutes from './routes/admin/admin.user.routes.js';
+
 const app = express();
 
 // Middleware
@@ -20,6 +22,8 @@ app.use(morgan('dev'));
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+
+app.use('/api/admin/users', adminUserRoutes);
 
 
 

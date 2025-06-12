@@ -1,0 +1,20 @@
+### Register a new user
+POST http://localhost:6969/api/auth/register
+Content-Type: application/json
+
+{
+  "telegramId": "123456789",
+  "password": "securePass123",
+  "name": "John Doe",
+  "phone": "+77001234567",
+  "email": "john@example.com"
+}
+
+### Login with Telegram ID and Password
+POST http://localhost:6969/api/auth/login
+Content-Type: application/json
+
+{
+  "telegramId": "123456789",
+  "password": "securePass123"
+}

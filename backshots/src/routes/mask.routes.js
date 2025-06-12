@@ -1,6 +1,6 @@
-const router = require('express').Router();
-const controller = require('../controllers/mask.controller');
-const auth = require('../middlewares/auth.middleware');
+import router from 'express';
+import controller from '../controllers/mask.controller';
+import auth from '../middlewares/auth.middleware';
 
 router.get('/', controller.getMasks);
 router.post('/', auth.adminOnly, controller.createMask);

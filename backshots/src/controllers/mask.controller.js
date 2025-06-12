@@ -1,4 +1,4 @@
-const maskService = require('../services/mask.service');
+import maskService from '../services/mask.service';
 
 exports.getMasks = async (req, res) => {
   const masks = await maskService.listMasks(req.query);

@@ -1,0 +1,7 @@
+### Get all published masks
+GET http://localhost:6969/api/masks
+Content-Type: application/json
+
+### Get one published mask by ID
+GET http://localhost:6969/api/masks/684c461b492f729a78ef194b
+Content-Type: application/json

@@ -1,0 +1,68 @@
+### 🟢 List all masks
+GET http://localhost:6969/api/admin/masks/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+
+###
+
+### 🟢 Create new mask
+POST http://localhost:6969/api/admin/masks/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+
+{
+  "name": "OxygenCare Mask",
+  "description": "Advanced oxygen therapy mask",
+  "videoReviewUrl": "https://youtube.com/review1",
+  "recommendedProducts": ["Product A", "Product B"]
+}
+
+###
+
+### 🟢 Get one mask by ID
+GET http://localhost:6969/api/admin/masks/684c4460476ab948b8a6d33b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+
+###
+
+### 🟡 Update mask
+PUT http://localhost:6969/api/admin/masks/684c4460476ab948b8a6d33b
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+
+{
+  "description": "Updated description for this mask",
+  "videoReviewUrl": "https://youtube.com/review2"
+}
+
+###
+
+### 🔴 Delete mask
+DELETE http://localhost:6969/api/admin/masks/684c4460476ab948b8a6d33b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+
+###
+
+### 🟢 Upload image for mask
+POST http://localhost:6969/api/admin/masks/684c4460476ab948b8a6d33b/upload
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+Content-Type: multipart/form-data
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="mask-image.jpg"
+Content-Type: image/jpeg
+
+< ./mask-image.jpg
+--boundary--
+
+###
+
+### 🟢 Add step to mask
+POST http://localhost:6969/api/admin/masks/684c4460476ab948b8a6d33b/steps
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+
+{
+  "title": "Step 1: Prepare the skin",
+  "description": "Clean the face thoroughly with lukewarm water.",
+  "mediaUrl": "https://cdn.site.com/steps/step1.jpg"
+}

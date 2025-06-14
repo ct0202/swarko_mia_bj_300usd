@@ -14,7 +14,7 @@ export const login = async (email, password) => {
   const token = jwt.sign(
     { id: admin._id, role: 'admin' },
     JWT_SECRET,
-    { expiresIn: '1d' }
+    { expiresIn: '365d' }
   );
 
   return token;

@@ -1,13 +1,22 @@
 import mongoose from 'mongoose';
 
-const MaskSchema = new mongoose.Schema({
-  name: String,
+const StepSchema = new mongoose.Schema({
+  title: String,
   description: String,
-  images: [String],
-  pdfManualUrl: String,
-  videoIds: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Video' }],
-  productIds: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
-  isPublished: { type: Boolean, default: true }
-}, { timestamps: true });
+  mediaUrl: String,  // image, video, pdf
+});
 
-module.exports = mongoose.model('Mask', MaskSchema);
+const MaskSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true, unique: true },
+    description: String,
+    images: [String], // URLs of uploaded images
+    steps: [StepSchema], // Instructions
+    videoReviewUrl: String,
+    recommendedProducts: [String], // maybe array of product IDs or names
+    isPublished: { type: Boolean, default: false },
+  },
+  { timestamps: true }
+);
+
+export const Mask = mongoose.model('Mask', MaskSchema);

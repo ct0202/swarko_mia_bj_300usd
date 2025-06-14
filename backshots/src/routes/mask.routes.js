@@ -1,8 +1,12 @@
-import router from 'express';
-import controller from '../controllers/mask.controller';
-import auth from '../middleware/auth.middleware';
+import { Router } from 'express';
+import {
+  listPublishedMasks,
+  getMaskDetails,
+} from '../controllers/mask.controller.js';
 
-router.get('/', controller.getMasks);
-router.post('/', auth.adminOnly, controller.createMask);
+const router = Router();
 
-module.exports = router;
+router.get('/', listPublishedMasks);
+router.get('/:id', getMaskDetails);
+
+export default router;

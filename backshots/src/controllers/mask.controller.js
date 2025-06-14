@@ -1,11 +1,15 @@
-import maskService from '../services/mask.service';
+import {
+  getAllPublishedMasks,
+  getPublishedMaskById,
+} from '../services/mask.service.js';
 
-exports.getMasks = async (req, res) => {
-  const masks = await maskService.listMasks(req.query);
+export const listPublishedMasks = async (req, res) => {
+  const masks = await getAllPublishedMasks();
   res.json(masks);
 };
 
-exports.createMask = async (req, res) => {
-  const mask = await maskService.createMask(req.body);
-  res.status(201).json(mask);
+export const getMaskDetails = async (req, res) => {
+  const mask = await getPublishedMaskById(req.params.id);
+  if (!mask) return res.status(404).json({ message: 'Mask not found' });
+  res.json(mask);
 };

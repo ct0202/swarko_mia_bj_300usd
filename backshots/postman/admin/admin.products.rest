@@ -1,0 +1,44 @@
+### 🔹 List all products
+GET http://localhost:6969/api/admin/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+
+###
+
+### 🔹 Create a new product
+POST http://localhost:6969/api/admin/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+
+{
+  "name": "Deep Cleanse Foam",
+  "description": "Gentle foaming cleanser for daily use",
+  "imageUrl": "https://cdn.example.com/images/deep-cleanse.jpg",
+  "link": "https://shop.example.com/products/deep-cleanse-foam",
+  "category": "Cleansers",
+  "isPublished": true,
+  "relatedMasks": ["684c461b492f729a78ef194b"]
+}
+
+###
+
+### 🔹 Get one product by ID
+GET http://localhost:6969/api/admin/products/684c4632492f729a78ef194d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+
+###
+
+### 🔹 Update a product
+PUT http://localhost:6969/api/admin/products/684c4632492f729a78ef194d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo
+
+{
+  "description": "Updated description: now with hydrating formula",
+  "isPublished": true
+}
+
+###
+
+### 🔹 Delete a product
+DELETE http://localhost:6969/api/admin/products/684c4632492f729a78ef194d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NGIyZDhhZjQzY2Y3OWZiOTY0NzA4MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0OTgyODU3OSwiZXhwIjoxNzgxMzY0NTc5fQ.xoZX6YTc_7Opb06S6ijzKpZRnTBP4R6gYbE2HWfTqEo

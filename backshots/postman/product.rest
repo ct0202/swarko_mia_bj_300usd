@@ -1,0 +1,9 @@
+### Get published products
+GET http://localhost:6969/api/products
+Content-Type: application/json
+### Get products by category (e.g., Cleansers)
+GET http://localhost:6969/api/products?category=Cleansers
+Content-Type: application/json
+### Get one published product by ID
+GET http://localhost:6969/api/products/PRODUCT_ID_HERE
+Content-Type: application/json

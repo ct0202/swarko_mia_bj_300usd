@@ -8,7 +8,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 
 import App from './App.jsx';
-import AuthProvider from './context/AuthProvider';
+import {AuthProvider} from './context/AuthProvider';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { NODE_ENV } from './config/config.js';

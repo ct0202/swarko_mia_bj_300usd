@@ -16,11 +16,11 @@ const router = Router();
 router.use('/auth', adminAuthRoutes);
 router.use('/users', isAdmin, adminUserRoutes);
 
+router.use('/masks', isAdmin, adminMaskRoutes);
+router.use('/products', isAdmin, adminProductRoutes);
 // router.use('/mailings', adminMailingRoutes);
 // router.use('/analytics', adminAnalyticsRoutes);
 // router.use('/content', adminContentRoutes);
-router.use('/masks', isAdmin, adminMaskRoutes);
-router.use('/products', isAdmin, adminProductRoutes);
 // router.use('/videos', adminVideoRoutes);
 
 export default router;
